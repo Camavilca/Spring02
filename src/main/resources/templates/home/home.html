@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>CMS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://mdbootstrap.com/previews/docs/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://mdbootstrap.com/previews/docs/latest/css/mdb.min.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body class="fixed-sn black-skin">
+    <header>
+
+        <div id="slide-out" class="side-nav sn-bg-2 fixed m-r">
+            <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title mt-2">
+                Tecsup <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+            </div>
+            <hr class="bg-white mx-3">
+            <!-- SideBar User info -->
+            <div class="full-box dashboard-sideBar-UserInfo">
+                <figure class="full-box">
+                    <img src="https://s3.amazonaws.com/staticcuc/images/stories/archivos/imagenes/iconos/franja/mujer-graduada.png" class="rounded mx-auto d-block mt-5" width="100px;" alt="UserIcon"/>
+                    <figcaption class="text-center text-titles ">
+                    	<span th:utext="${userName}" class="text-uppercase "></span>
+                    </figcaption>
+                    <!-- ul class="list-unstyled list-inline font-small text-center">
+                        <li class="list-inline-item pr-1">
+                            <a th:href="@{/logout}" id="cerrar_sesion" class="cerrar"><i class="fa fa-power-off pr-1 fa-1x red-text "></i>Cerrar Sesión</a>
+                        </li>
+                    </ul-->
+                </figure>
+            </div>
+            <hr class="bg-white mx-3">
+            <ul class="collapsible collapsible-accordion">
+                   	<li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-home"></i>Inicio<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                        <div class="collapsible-body">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="waves-effect">C1</a></li>
+                            <li><a href="#" class="waves-effect">C2</a></li>
+                            <li><a href="#" class="waves-effect">C3</a></li>
+                            <li><a href="#" class="waves-effect">C4</a></li>
+                        </ul>
+                    </div> 
+                    </li>
+                    <li>
+                        <a href="subir" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-cloud-upload"></i>Subir<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-cloud-download"></i>Descargar<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                        <div class="collapsible-body">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="waves-effect">C1</a></li>
+                            <li><a href="#" class="waves-effect">C2</a></li>
+                            <li><a href="#" class="waves-effect">C3</a></li>
+                            <li><a href="#" class="waves-effect">C4</a></li>
+                        </ul>
+                        </div>
+                    </li>
+                
+                    <li>
+                        <a href="buscar.html" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-search"></i>Buscar<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-star-o"></i>Mejores<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-thumbs-o-up"></i>Favoritos<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+            </ul>
+
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+
+
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav stylish-color-dark darken-1">
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-th-list"></i></a>
+            </div>
+            <div class="breadcrumb-dn mr-auto">
+                <p>Bienvenidos a esta pagina</p>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item">
+                    <a th:href="@{/logout}" type="button" class="btn btn-outline-info btn-sm btn-rounded waves-effect text-ligth"
+                        >Salir <i class="fa fa-sign-out"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/jquery-3.3.1.min.js"></script>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/popper.min.js"></script>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/bootstrap.min.js"></script>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/mdb.min.js"></script>
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+        });
+        new WOW().init();
+        var inFormOrLink;
+        $('.cerrar').on('click', function () { inFormOrLink = true; });
+        $('form').on('submit', function () { inFormOrLink = true; });
+
+        $(window).on("beforeunload", function () {
+            return inFormOrLink ? "Do you really want to close?" : null;
+        });
+    </script>
+
+</body>
+
+</html>

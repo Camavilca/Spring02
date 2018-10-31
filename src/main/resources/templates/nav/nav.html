@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	 <header>
+
+        <div id="slide-out" class="side-nav sn-bg-2 fixed m-r">
+            <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title mt-5">
+                Tecsup <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+            </div>
+            <hr class="bg-white mx-3">
+            <!-- SideBar User info -->
+            <div class="full-box dashboard-sideBar-UserInfo">
+                <figure class="full-box">
+                    <img src="user.png" class="rounded mx-auto d-block mt-5" width="100px;" alt="UserIcon"/>
+                    <figcaption class="text-center text-titles">User Name</figcaption>
+                    <ul class="list-unstyled list-inline font-small text-center">
+                        <li class="list-inline-item pr-2">
+                            <a href="#" class="white-text">
+                                <i class="fa fa-cog pr-1 fa-1x  "></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item pr-2">
+                            <a href="#" class="white-text" >
+                                <i class="fa fa-power-off pr-1 fa-1x red-text "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </figure>
+            </div>
+            <hr class="bg-white mx-3">
+            <ul class="collapsible collapsible-accordion">
+                <!-- <li>
+                    <a class="collapsible-header waves-effect arrow-r">
+                        <i class="fa fa-folder-o"></i>PROYECTOS<i class="fa fa-angle-down rotate-icon"></i>
+                    </a>
+                   <div class="collapsible-body">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="waves-effect">C1</a></li>
+                            <li><a href="#" class="waves-effect">C2</a></li>
+                            <li><a href="#" class="waves-effect">C3</a></li>
+                            <li><a href="#" class="waves-effect">C4</a></li>
+                        </ul>
+                    </div> 
+                </li> -->
+                <div class="p-3">
+                    <li>
+                        <a href="home.html" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-home"></i>Inicio<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="p-3">
+                    <li>
+                        <a href="navbar.html" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-cloud-upload"></i>Subir<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="p-3">
+                    <li>
+                        <a href="subir.html" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-cloud-download"></i>Descargar<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="p-3">
+                    <li>
+                        <a href="buscar.html" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-search"></i>Buscar<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="p-3">
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-star-o"></i>Mejores<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="p-3">
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-thumbs-o-up"></i>Favoritos<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+
+
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav stylish-color-dark darken-1">
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-th-list"></i></a>
+            </div>
+            <div class="breadcrumb-dn mr-auto">
+                <p>Bienvenidos a esta pagina</p>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item">
+                    <a href="" type="button" class="btn btn-outline-info btn-sm btn-rounded waves-effect text-ligth"
+                        data-toggle="modal" data-target="#modalLRForm">LOG IN <i class="fa fa-sign-in"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+    <!--Modal: Login / Register Form-->
+    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+
+                <!--Modal cascading tabs-->
+                <div class="modal-c-tabs">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i>
+                                Inicia Sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i>
+                                Registrate</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panels -->
+                    <div class="tab-content">
+                        <!--INICIO DE SESION-->
+                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+                            <div class="modal-body mb-1">
+                                <form method="get" action="iniciosesion.do">
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fa fa-envelope prefix"></i>
+                                        <input type="email" name="usuario" id="usuario" class="form-control form-control-sm validate"
+                                            required>
+                                        <label data-error="wrong" data-success="right" for="usuario">Correo
+                                            electrónico</label>
+                                    </div>
+                                    <div class="md-form form-sm mb-4">
+                                        <i class="fa fa-lock prefix"></i>
+                                        <input type="password" id="contraseña" name="contraseña" class="form-control form-control-sm validate"
+                                            required>
+                                        <label data-error="wrong" data-success="right" for="contraseña">Contraseña</label>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <button type="submit" class="btn btn-info">Aceptar<i class="fa fa-sign-in ml-1"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-success btn-sm btn-rounded waves-effect"
+                                    data-dismiss="modal"><i class="fa fa-close"></i></button>
+                            </div>
+                        </div>
+                        <!--/INICI DE SESION-->
+
+                        <!--REGISTRO DE USUARIO-->
+                        <div class="tab-pane fade" id="panel8" role="tabpanel">
+                            <div class="modal-body">
+                                <form method="get" action="registrarusuario.do">
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fa fa-user prefix"></i>
+                                        <input type="text" id="nombre" name="nombre" class="form-control form-control-sm validate text-lowercase"
+                                            required>
+                                        <label data-error="wrong" data-success="right" for="nombre">Tu Nombre</label>
+                                    </div>
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fa fa-user-plus prefix"></i>
+                                        <input type="text" id="apellido" name="apellido" class="form-control form-control-sm validate text-lowercase"
+                                            required>
+                                        <label data-error="wrong" data-success="right" for="apellido">Tu Apellido</label>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fa fa-envelope prefix"></i>
+                                        <input type="email" id="correo" name="usuario" class="form-control form-control-sm validate text-lowercase"
+                                            required>
+                                        <label data-error="wrong" data-success="right" for="correo">Tu correo
+                                            electrónico</label>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fa fa-unlock prefix"></i>
+                                        <input type="password" id="clave" name="contraseña" class="form-control form-control-sm validate"
+                                            required>
+                                        <label data-error="wrong" data-success="right" for="clave">Tu
+                                            contraseña</label>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-4">
+                                        <i class="fa fa-lock prefix"></i>
+                                        <input type="password" id="clave2" name="contraseña2" class="form-control form-control-sm validate"
+                                            required>
+                                        <label data-error="wrong" data-success="right" for="clave2">Repita
+                                            contraseña</label>
+                                    </div>
+                                    <div class="text-center form-sm mt-2">
+                                        <button type="submit" class="btn btn-info">Registrarte <i class="fa fa-sign-in ml-1"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-success btn-sm btn-rounded waves-effect"
+                                    data-dismiss="modal"><i class="fa fa-close"></i></button>
+                            </div>
+                        </div>
+                        <!--/REGISTRO DE USUARIO-->
+                    </div>
+
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+</body>
+</html>

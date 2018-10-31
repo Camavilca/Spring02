@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Upload MultipartFile</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://mdbootstrap.com/previews/docs/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://mdbootstrap.com/previews/docs/latest/css/mdb.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="/js/postrequest.js"></script>
+	<script src="/js/getrequest.js"></script>
+</head>
+ 
+<body>
+<body class="fixed-sn black-skin">
+    <header>
+
+        <div id="slide-out" class="side-nav sn-bg-2 fixed m-r">
+            <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title mt-2">
+                Tecsup <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+            </div>
+            <hr class="bg-white mx-3">
+            <!-- SideBar User info -->
+            <div class="full-box dashboard-sideBar-UserInfo">
+                <figure class="full-box">
+                    <img src="https://s3.amazonaws.com/staticcuc/images/stories/archivos/imagenes/iconos/franja/mujer-graduada.png" class="rounded mx-auto d-block mt-5" width="100px;" alt="UserIcon"/>
+                    <figcaption class="text-center text-titles ">
+                    	<span th:utext="${userName}" class="text-uppercase "></span>
+                    </figcaption>
+                    <!-- ul class="list-unstyled list-inline font-small text-center">
+                        <li class="list-inline-item pr-1">
+                            <a th:href="@{/logout}" class="cerrar" id="cerrar_sesion" ><i class="fa fa-power-off pr-1 fa-1x red-text "></i>Cerrar Sesión</a>
+                        </li>
+                    </ul-->
+                </figure>
+            </div>
+            <hr class="bg-white mx-3">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-home"></i>Inicio<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                        <div class="collapsible-body">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="waves-effect">C1</a></li>
+                            <li><a href="#" class="waves-effect">C2</a></li>
+                            <li><a href="#" class="waves-effect">C3</a></li>
+                            <li><a href="#" class="waves-effect">C4</a></li>
+                        </ul>
+                    </div> 
+                    </li>
+                    <li>
+                        <a href="subir" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-cloud-upload"></i>Subir<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-cloud-download"></i>Descargar<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                        <div class="collapsible-body">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="waves-effect">C1</a></li>
+                            <li><a href="#" class="waves-effect">C2</a></li>
+                            <li><a href="#" class="waves-effect">C3</a></li>
+                            <li><a href="#" class="waves-effect">C4</a></li>
+                        </ul>
+                        </div>
+                    </li>
+                
+                    <li>
+                        <a href="buscar.html" class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-search"></i>Buscar<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-star-o"></i>Mejores<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="collapsible-header waves-effect arrow-r">
+                            <i class="fa fa-thumbs-o-up"></i>Favoritos<i class="fa fa-angle-down rotate-icon"></i>
+                        </a>
+                    </li>
+            </ul>
+
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+
+
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav stylish-color-dark darken-1">
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-th-list"></i></a>
+            </div>
+            <div class="breadcrumb-dn mr-auto">
+                <p>Bienvenidos a esta pagina</p>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item">
+                    <a th:href="@{/logout}" type="button" class="btn btn-outline-info btn-sm btn-rounded waves-effect text-ligth"
+                        >Salir <i class="fa fa-sign-out"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="container">
+        <section class="form-dark">
+            <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+                <div class="card card-image" style="background-image: url('https://www.kabytes.com/wp-content/uploads/2012/09/text.jpg'); width: 28rem;">
+                    <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                        <div class="text-center">
+                            <h3 class="white-text mb-5 mt-4 font-weight-bold"><strong>SUBIR</strong> <a class="green-text font-weight-bold"><strong>
+                                        DOCUMENTO</strong></a></h3>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" id="nombre" class="form-control white-text">
+                            <label for="nombre">Nombre del documento</label>
+                        </div>
+                        <select class="mdb-select md-form font-white">
+                            <option value="" disabled selected>Tipo</option>
+                            <option value="">Tesis</option>
+                            <option value="">Proyecto Integrador</option>
+                        </select>
+                        <select class="mdb-select md-form font-white">
+                            <option value="" disabled selected>Ciclos</option>
+                            <option value="">Primer</option>
+                            <option value="">Segundo</option>
+                            <option value="">Tercer</option>
+                            <option value="">Cuarto</option>
+                            <option value="">Quinto</option>
+                            <option value="">Sexto</option>
+                        </select>
+                        <select class="mdb-select md-form font-white">
+                            <option value="" disabled selected>Carrera</option>
+                            <option value="">C1</option>
+                            <option value="">C2</option>
+                            <option value="">C3</option>
+                            <option value="">C4</option>
+                            <option value="">C5</option>
+                        </select>
+                        <div class="upload_icon">
+                            <div class="file-field big text-center">
+                                <a class="btn-floating btn-lg amber darken-2 mt-0 float-left text-center">
+                                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                    <input type="file" id="uploadfile"  name="uploadfile">
+                                </a>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" id="upload_archivo" type="text" placeholder="Upload one or more files">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="text-center mb-3 col-md-12">
+                                <button type="submit" id="btnSubmit" class="btn btn-outline-info btn-block btn-rounded z-depth-1">Guardar
+                                    <i class="fa fa-cloud-upload"></i></button>
+                                <button type="button" class="btn btn-default" id="btnGetFiles">Files</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <div class="card card-view">
+        	<div class="card-hearder text-uppercase bg-info" style="width: 300px">
+        		Lista para descargar
+        	</div>
+        	<div class="card-body">
+        		<div id="listFiles">
+				</div>
+        	</div>
+        </div>
+    </div>
+	<div class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-sm-5">
+				<h3>Upload MultipartFile to MySQL</h3>
+				<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+					<div class="form-group">
+						<label class="control-label" for="uploadfile">Upload File:</label>
+						<input type="file" class="form-control" id="uploadfile" placeholder="Upload File"  name="uploadfile"></input>
+					</div>
+					
+			        <button type="submit" class="btn btn-default" id="btnSubmit">Upload</button>
+			        <button type="button" class="btn btn-default" id="btnGetFiles">Files</button>
+				</form>
+				<hr/>
+				<div id="listFiles">
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+	
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/jquery-3.3.1.min.js"></script>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/popper.min.js"></script>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/bootstrap.min.js"></script>
+    <script src="https://mdbootstrap.com/previews/docs/latest/js/mdb.min.js"></script>
+    <script>
+    $(".button-collapse").sideNav();
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+        });
+        $('.cerrar').on('click', function () { inFormOrLink = true; });
+        $('form').on('submit', function () { inFormOrLink = true; });
+
+        $(window).on("beforeunload", function () {
+            return inFormOrLink ? "Do you really want to close?" : null;
+        });
+    </script>
+</body>
+</html>
